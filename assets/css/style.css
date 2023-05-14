@@ -17,48 +17,49 @@ body {
 .align-right {
     text-align: right;
 }
-
+/* headings and logo style */
 #logo {
     margin-top: 30px;
     font-size: 3.5rem;
     color: #f49f1c;
 }
-
-#quiz-box-style {
+/* quiz section, includes the counter, question, answers and 'next' button and */
+#quiz-box {
     background-color: #f49f1c;
     margin: 60px 6%;
     border-radius: 2rem;
     color: #000000;
 }
 
-#quiz-box-style div {
+#quiz-box div {
     padding: 0.3rem 0;
 }
-
+/* question style */
 #question {
     font-size: 1.3rem;
     padding: 0 1.5rem;
     margin: 0;
 }
-
+/* counter for which question is displayed */
 #question-counter {
     height: 4.1rem;
     width: 4.1rem;
 
+    font-size: 1.7rem;
     background-color: #eeb050;
     color: #000000;
     border-radius: 50%;
     line-height: 3.6rem;
-    font-size: 1.7rem;
     margin: auto;
     margin-top: -2rem;
 }
-
+/* answers section */
 #answer-1,
 #answer-2,
 #answer-3,
 #answer-4 {
     height: 50px;
+    
     font-size: 1.2rem;
     margin: 10px 20px;
     border-radius: 10px;
@@ -66,10 +67,11 @@ body {
     line-height: 50px;
     /*Color for wrong #f00400 */
 }
-
+/* button for the next question */
 #next-question {
     height: 2.3rem;
     width: 4.8rem;
+    
     font-size: 1.2rem;
     margin: 3px 20px;
     border-radius: 20px;
