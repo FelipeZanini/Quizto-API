@@ -7,15 +7,21 @@ html {
 body {
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #030e4f;
 }
 
 .center-elements {
     text-align: center;
 }
 
+#logo {
+    margin-top: 30px;
+    font-size: 3.5rem;
+    color: #f49f1c;
+}
 #quiz-box-style {
-    background-color: rgba(166, 172, 140, 0.808);
-    margin: 13% 6%;
+    background-color: #f49f1c;
+    margin: 60px 6%;
     border-radius: 2rem;
 }
 
@@ -47,13 +53,17 @@ body {
 #answer-4 {
     height: 50px;
     font-size: 1.2rem;
+    margin: 10px 20px;
+    border-radius: 10px;
+    background-color: rgba(240, 255, 255, 0.222);
     line-height: 50px;
     
 }
 
 #next-question {
-    height: 2rem;
-    width: 4.5rem;
-    font-size: 1rem;
-    margin: 5px;
+    height: 2.3rem;
+    width: 4.8rem;
+    font-size: 1.2rem;
+    margin: 6px;
+    border-radius: 20px;
 }
