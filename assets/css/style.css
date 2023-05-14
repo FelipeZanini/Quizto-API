@@ -14,15 +14,21 @@ body {
     text-align: center;
 }
 
+.align-right {
+    text-align: right;
+}
+
 #logo {
     margin-top: 30px;
     font-size: 3.5rem;
     color: #f49f1c;
 }
+
 #quiz-box-style {
     background-color: #f49f1c;
     margin: 60px 6%;
     border-radius: 2rem;
+    color: #000000;
 }
 
 #quiz-box-style div {
@@ -39,9 +45,10 @@ body {
     height: 4.1rem;
     width: 4.1rem;
 
-    background-color: rgba(86, 168, 113, 0.496);
+    background-color: #eeb050;
+    color: #000000;
     border-radius: 50%;
-    line-height: 3.3rem;
+    line-height: 3.6rem;
     font-size: 1.7rem;
     margin: auto;
     margin-top: -2rem;
@@ -55,15 +62,17 @@ body {
     font-size: 1.2rem;
     margin: 10px 20px;
     border-radius: 10px;
-    background-color: rgba(240, 255, 255, 0.222);
+    background-color: rgba(240, 255, 255, 0.295);
     line-height: 50px;
-    
+    /*Color for wrong #f00400 */
 }
 
 #next-question {
     height: 2.3rem;
     width: 4.8rem;
     font-size: 1.2rem;
-    margin: 6px;
+    margin: 3px 20px;
     border-radius: 20px;
+    color: #030e4f;
+    background-color: rgba(240, 255, 255, 0.295)
 }
