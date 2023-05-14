@@ -27,6 +27,7 @@ body {
 #quiz-box {
     background-color: #f49f1c;
     margin: 60px 6%;
+    border: #ffffff 1.2px solid;
     border-radius: 2rem;
     color: #000000;
 }
@@ -48,6 +49,7 @@ body {
     font-size: 1.7rem;
     background-color: #eeb050;
     color: #000000;
+    border: #ffffff 0.1px solid;
     border-radius: 50%;
     line-height: 3.6rem;
     margin: auto;
@@ -63,6 +65,7 @@ body {
     font-size: 1.2rem;
     margin: 10px 20px;
     border-radius: 10px;
+    border: #ffffff 0.1px solid;
     background-color: rgba(240, 255, 255, 0.295);
     line-height: 50px;
     /*Color for wrong #f00400 */
