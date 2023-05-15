@@ -1,4 +1,4 @@
-const counter = 0;
+let counter = 0;
 //get all elements on html document
 let questionCounter = document.getElementById('question-counter');
 let question = document.getElementById('question');
@@ -15,8 +15,17 @@ function newQuestion(counter) {
             answers[i].textContent = listAnswers[i];
         }
         checkAnswer();
-    }//elseif(counter==1){do the other question} 
+    } else if (counter == 1) {
+        let listAnswers = ['Spanish', 'Brazilian', 'Portuguese', 'English'];
+        question.textContent = "What language is spoken on Brazil?";
+        questionCounter.innerHTML = ++counter;
+        for (i in answers) {
+            answers[i].textContent = listAnswers[i];
+        }
+        checkAnswer();
+    }
 }
+
 newQuestion(counter); //call the question start 
 
 function checkAnswer() {
@@ -27,20 +36,37 @@ function checkAnswer() {
             } else {
                 answer.classList.add('wrong-answer');
             }
+            nextQuiz();
         })
     }
 
 }
+function nextQuiz() {
 
-nextQuestion.addEventListener('click', function () {
-    for(let answer in answers){
-        let coco = answer.classList.contains('right-answer');
-        console.log(coco);
-          
-    }      
-})
+    nextQuestion.addEventListener('click', function () {
+        for (let answer of answers) {
+            let answerRight = answer.classList.contains('right-answer');
+            if (answerRight) {
+                counter = ++counter;
+                newQuestion(counter);
+                removeClass();
+                break;
+            } else {
+                alert('You must answer right before proceed');
+                break;
+            }
+        }
+    })
+}
 
 
 
 
 
+
+function removeClass() {
+    for(let i in answers){
+        answers[i].classList.remove("right-answer", "wrong-answer");
+        break;
+    }
+}
