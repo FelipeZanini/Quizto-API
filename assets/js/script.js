@@ -14,7 +14,7 @@ function newQuestion(counter) {
         for (i in answers) {
             answers[i].textContent = listAnswers[i];
         }
-    checkAnswer();
+        checkAnswer();
     }//elseif(counter==1){do the other question} 
 }
 newQuestion(counter); //call the question start 
@@ -24,19 +24,21 @@ function checkAnswer() {
         answer.addEventListener('click', function () {
             if (answer.textContent == 'Water') {
                 answer.classList.add('right-answer');
-            }else {
+            } else {
                 answer.classList.add('wrong-answer');
             }
         })
     }
+
 }
 
-
-function nextQuestion() {
-    nextQuestion.addEventListener('click', function () {
-        console.log('coco');
-    })
-}
+nextQuestion.addEventListener('click', function () {
+    for(let answer in answers){
+        let coco = answer.classList.contains('right-answer');
+        console.log(coco);
+          
+    }      
+})
 
 
 
