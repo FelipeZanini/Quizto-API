@@ -1,27 +1,44 @@
+const counter = 0;
 //get all elements on html document
 let questionCounter = document.getElementById('question-counter');
 let question = document.getElementById('question');
-let answer1 = document.getElementById('answer-1');
-let answer2 = document.getElementById('answer-2');
-let answer3 = document.getElementById('answer-3');
-let answer4 = document.getElementById('answer-4');
+let answers = document.getElementsByClassName('answers');
 let nextQuestion = document.getElementById('next-question');
+
 //start of quiz
-const counter = 0;
-function newQuestion(counter){
-    if (counter == 0){
-        questionCounter.innerHTML = ++counter;
+function newQuestion(counter) {
+    if (counter == 0) {
+        let listAnswers = ['Water', 'Aluminium', 'Plastic', 'Oxygen'];
         question.textContent = "What is H20?";
-        answer1.textContent = "Water";
-        answer2.textContent = "Aluminium";
-        answer3.textContent = "Iron";
-        answer4.textContent = "Oxygen";
+        questionCounter.innerHTML = ++counter;
+        for (i in answers) {
+            answers[i].textContent = listAnswers[i];
+        }
+    checkAnswer();
     }//elseif(counter==1){do the other question} 
 }
 newQuestion(counter); //call the question start 
-answer1.addEventListener('click', function(){
-    if(answer1.textContent == 'Water') {
-        console.log('you did it right');
+
+function checkAnswer() {
+    for (let answer of answers) {
+        answer.addEventListener('click', function () {
+            if (answer.textContent == 'Water') {
+                answer.classList.add('right-answer');
+            }else {
+                answer.classList.add('wrong-answer');
+            }
+        })
     }
-} )
+}
+
+
+function nextQuestion() {
+    nextQuestion.addEventListener('click', function () {
+        console.log('coco');
+    })
+}
+
+
+
+
 
