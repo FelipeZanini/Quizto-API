@@ -1,3 +1,4 @@
+//counter to know which question is been displayed and to change the question/ansers content
 let counter = 0;
 //get all elements on html document
 let questionCounter = document.getElementById('question-counter');
@@ -41,6 +42,7 @@ function checkAnswer() {
     }
 
 }
+
 function nextQuiz() {
 
     nextQuestion.addEventListener('click', function () {

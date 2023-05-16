@@ -66,11 +66,11 @@ body {
     background-color: rgba(240, 255, 255, 0.295);
     line-height: 50px;
 }
-/* right answer class, add using js */
+/* right answer class, display a green background on the answer if the user clicked on the right one */
 .right-answer {
     background-color: rgb(37, 180, 37);
 }
-/* wrong answer class, add using js */
+/* wrong answer class, display a red background on the answer if the user clicked on the wrong one */
 .wrong-answer {
     background-color: #f00400;
 }
