@@ -49,16 +49,13 @@ function displayQuestion(counter) {
     for (let i = 0; i < answers.length; i++) {
         answers[i].innerText = questions[counter].answers[i].text;
     }
-
-    for (let i = 0; i < answers.length; i++) {
-        answers[i].addEventListener("click", checkAnswer);
-    }
 }
 
 //Display Check answer function
-function checkAnswer() {
-    alert('you clicked me');
-    
+function checkAnswer(answer) {
+   // if(questions[counter].answers[i].correct){
+     //   answers.setData.correct(answer')
+  // } TRYING TO ADD A DATA SET TO THE CORRECT ANSWER SO I CAN CHECK
     
     //counter++;
     //displayQuestion(counter);
