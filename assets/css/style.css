@@ -58,21 +58,15 @@ body {
 /* answers section */
 .answers {
     height: 50px;
+    width: 80%;
     
+    display: inline-block;
     font-size: 1.2rem;
     margin: 10px 20px;
     border-radius: 10px;
     border: #ffffff 0.1px solid;
     background-color: rgba(240, 255, 255, 0.295);
     line-height: 50px;
-}
-/* right answer class, display a green background on the answer if the user clicked on the right one */
-.right-answer {
-    background-color: rgb(37, 180, 37);
-}
-/* wrong answer class, display a red background on the answer if the user clicked on the wrong one */
-.wrong-answer {
-    background-color: #f00400;
 }
 
 /* button for the next question */

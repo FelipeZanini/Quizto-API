@@ -1,74 +1,67 @@
-//counter to know which question is been displayed and to change the question/ansers content
-let counter = 0;
 //get all elements on html document
 let questionCounter = document.getElementById('question-counter');
 let question = document.getElementById('question');
 let answers = document.getElementsByClassName('answers');
 let nextQuestion = document.getElementById('next-question');
 
-//start of quiz
-function newQuestion(counter) {
-    if (counter == 0) {
-        let listAnswers = ['Water', 'Aluminium', 'Plastic', 'Oxygen'];
-        question.textContent = "What is H20?";
-        questionCounter.innerHTML = ++counter;
-        for (i in answers) {
-            answers[i].textContent = listAnswers[i];
-        }
-        checkAnswer();
-    } else if (counter == 1) {
-        let listAnswers = ['Spanish', 'Brazilian', 'Portuguese', 'English'];
-        question.textContent = "What language is spoken on Brazil?";
-        questionCounter.innerHTML = ++counter;
-        for (i in answers) {
-            answers[i].textContent = listAnswers[i];
-        }
-        checkAnswer();
+//global variables
+let score, counter;
+
+//Question for our quizz
+const questions = [
+    {
+        question: 'What is H2O',
+        answers: [
+            { text: 'Water', correct: true },
+            { text: 'Aluminium', correct: false },
+            { text: 'Oxygen', correct: false },
+            { text: 'Carbon', correct: false },
+        ]
+    },
+
+    {
+        question: 'What is jujubinha',
+        answers: [
+            { text: 'A Dog', correct: true },
+            { text: 'A Bird', correct: false },
+            { text: 'A Plane', correct: false },
+            { text: 'A Homo Sapiens', correct: false },
+        ]
+    }
+
+]
+startQuiz();
+
+//Start quiz function
+function startQuiz() {
+    score = 0;
+    counter = 0;
+    displayQuestion(counter);
+    //gameOver () // if we arrive at the end, each function should be linked!
+}
+
+//Display Question function
+function displayQuestion(counter) {
+
+    questionCounter.innerText = counter;
+    question.innerText = questions[counter].question;
+
+    for (let i = 0; i < answers.length; i++) {
+        answers[i].innerText = questions[counter].answers[i].text;
+    }
+
+    for (let i = 0; i < answers.length; i++) {
+        answers[i].addEventListener("click", checkAnswer);
     }
 }
 
-newQuestion(counter); //call the question start 
-
+//Display Check answer function
 function checkAnswer() {
-    for (let answer of answers) {
-        answer.addEventListener('click', function () {
-            if (answer.textContent == 'Water') {
-                answer.classList.add('right-answer');
-            } else {
-                answer.classList.add('wrong-answer');
-            }
-            nextQuiz();
-        })
-    }
-
+    alert('you clicked me');
+    
+    
+    //counter++;
+    //displayQuestion(counter);
+   
 }
 
-function nextQuiz() {
-
-    nextQuestion.addEventListener('click', function () {
-        for (let answer of answers) {
-            let answerRight = answer.classList.contains('right-answer');
-            if (answerRight) {
-                counter = ++counter;
-                newQuestion(counter);
-                removeClass();
-                break;
-            } else {
-                alert('You must answer right before proceed');
-                break;
-            }
-        }
-    })
-}
-
-
-
-
-
-
-function removeClass() {
-    for(let i in answers){
-        answers[i].classList.remove("right-answer", "wrong-answer");
-        break;
-    }
-}
