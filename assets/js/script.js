@@ -1,4 +1,5 @@
 //get all elements on html document
+let quizBox = document.getElementById('quiz-box');
 let questionCounter = document.getElementById('question-counter');
 let question = document.getElementById('question');
 let answers = document.getElementsByClassName('answers');
@@ -38,9 +39,15 @@ function startQuiz() {
     score = 0;
     counter = 0;
     displayQuestion(counter);
-    //gameOver () // if we arrive at the end, each function should be linked!
 }
 
+//game over function
+function gameOver() {
+    if(counter == questions.length){
+    quizBox.classList.add('hide');
+    console.log(score);
+}
+}
 //Display Question function
 function displayQuestion(counter) {
 
@@ -59,21 +66,28 @@ function displayQuestion(counter) {
 function checkAnswer(answer) {
     if (answer.getAttribute("datatype", "right")) {
         answer.classList.add("right");
-        counter++;
         score++;
-        nextQuestion.classList.remove('hide');
     } else {
         answer.classList.add("wrong");
         //answer.getAttribute("datatype", "right".click());
     }
-
+    for (let i = 0; i < answers.length; i++){
+        answers[i].style.pointerEvents = 'none';
+        if(answers[i].getAttribute("datatype", "right")){
+            answers[i].classList.add("right"); 
+        }
+    }
+    nextQuestion.classList.remove('hide');
+    counter++;
 }
 
 function nextButtom() {
     for (let i = 0; i < answers.length; i++) {
         answers[i].classList.remove("wrong", "right");
         answers[i].removeAttribute("datatype", "right");
+        answers[i].style.pointerEvents = 'auto';
     }
     nextQuestion.classList.add('hide');
+    gameOver();
     displayQuestion(counter);
 }
