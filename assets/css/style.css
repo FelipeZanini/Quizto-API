@@ -46,7 +46,7 @@ body {
     height: 4.1rem;
     width: 4.1rem;
 
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     background-color: #eeb050;
     color: #000000;
     border: #ffffff 0.1px solid;
@@ -81,6 +81,17 @@ body {
     background-color: rgba(240, 255, 255, 0.295)
 }
 
-.jj {
+/* hide class */
+.hide {
+    display: none;
+}
+
+/* class right answer  */
+.right {
+    background-color: green;
+}
+
+/* class wrong answer  */
+.wrong {
     background-color: red;
 }
