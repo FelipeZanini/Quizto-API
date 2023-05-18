@@ -22,8 +22,9 @@ const questions = [
     {
         question: 'What is jujubinha',
         answers: [
-            { text: 'A Dog', correct: true },
+        
             { text: 'A Bird', correct: false },
+            { text: 'A Dog', correct: true },
             { text: 'A Plane', correct: false },
             { text: 'A Homo Sapiens', correct: false },
         ]
@@ -35,7 +36,7 @@ startQuiz();
 //Start quiz function
 function startQuiz() {
     score = 0;
-    counter = 0;
+    counter = 1;
     displayQuestion(counter);
     //gameOver () // if we arrive at the end, each function should be linked!
 }
@@ -48,17 +49,19 @@ function displayQuestion(counter) {
 
     for (let i = 0; i < answers.length; i++) {
         answers[i].innerText = questions[counter].answers[i].text;
+        if(questions[counter].answers[i].correct){
+            answers[i].setAttribute("datatype", "right");
+        }    
     }
 }
 
 //Display Check answer function
 function checkAnswer(answer) {
-   // if(questions[counter].answers[i].correct){
-     //   answers.setData.correct(answer')
-  // } TRYING TO ADD A DATA SET TO THE CORRECT ANSWER SO I CAN CHECK
+console.log(answer); 
+if(answer.getAttribute("datatype", "right")){
+        alert('that is the right one');
     
-    //counter++;
-    //displayQuestion(counter);
+}
    
 }
 
