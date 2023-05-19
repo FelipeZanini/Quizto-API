@@ -6,7 +6,7 @@ let answers = document.getElementsByClassName('answers');
 let nextQuestion = document.getElementById('next-question');
 
 //global variables
-let score, counter; 
+let score, counter;
 
 //Question for our quizz
 const questions = [
@@ -32,21 +32,38 @@ const questions = [
     }
 
 ]
+starbuttun()
+function starbuttun() {
+    for (let i = 0; i < 2; i++) {
+        quizBox.children[i].classList.add('hide');
+
+    }
+    let startgamePage = document.createElement('div');
+        startgamePage.innerHTML = "<p onclick='restartQuiz()'>Vai toma no seu cu</p>"
+        quizBox.appendChild(startgamePage);
+}
 startQuiz();
 
 //Start quiz function
 function startQuiz() {
     score = 0;
     counter = 0;
+    console.log(counter);
     displayQuestion(counter);
 }
 
 //game over function
 function gameOver() {
-    if(counter == questions.length){
-    quizBox.classList.add('hide');
-    console.log(score);
-}
+    if (counter == questions.length) {
+        for (let i = 0; i < 2; i++) {
+            quizBox.children[i].classList.add('hide');
+        }
+        let endGamePage = document.createElement('div');
+        endGamePage.innerHTML = "<p onclick='restartQuiz()'>Vai toma no seu cu</p>"
+        endGamePage.id= "restart-button"
+        quizBox.appendChild(endGamePage);
+
+    }
 }
 //Display Question function
 function displayQuestion(counter) {
@@ -71,10 +88,10 @@ function checkAnswer(answer) {
         answer.classList.add("wrong");
         //answer.getAttribute("datatype", "right".click());
     }
-    for (let i = 0; i < answers.length; i++){
+    for (let i = 0; i < answers.length; i++) {
         answers[i].style.pointerEvents = 'none';
-        if(answers[i].getAttribute("datatype", "right")){
-            answers[i].classList.add("right"); 
+        if (answers[i].getAttribute("datatype", "right")) {
+            answers[i].classList.add("right");
         }
     }
     nextQuestion.classList.remove('hide');
@@ -90,4 +107,13 @@ function nextButtom() {
     nextQuestion.classList.add('hide');
     gameOver();
     displayQuestion(counter);
+}
+
+function restartQuiz() {
+    for (let i = 0; i < 2; i++) {
+        quizBox.children[i].classList.remove('hide');
+
+    }
+    document.querySelector('#restart-button').remove();
+    startQuiz()
 }
