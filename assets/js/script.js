@@ -4,6 +4,8 @@ let questionCounter = document.getElementById('question-counter');
 let question = document.getElementById('question');
 let answers = document.getElementsByClassName('answers');
 let nextQuestion = document.getElementById('next-question');
+let startButton = document.getElementById('start-button');
+let gameOverText = document.getElementById('game-over-text');
 
 //global variables
 let score, counter;
@@ -48,7 +50,7 @@ function startQuiz() {
 //Display Question function
 function displayQuestion(counter) {
 
-    questionCounter.innerText = `${1 + counter}/5`;
+    questionCounter.innerHTML =`${1 + counter}`;
     question.innerText = questions[counter].question;
 
     for (let i = 0; i < answers.length; i++) {
@@ -95,7 +97,9 @@ function gameOver() {
         for (let i = 0; i < 2; i++) {
             quizBox.children[i].classList.add('hide');
         }
-        document.getElementById('start-button').classList.remove('hide');
+        startButton.classList.remove('hide');
+        gameOverText.classList.remove('hide');
+        gameOverText.innerHTML = `<strong>Congratulation!</strong><br>Your Score is: ${score}`;
     }
 }
 
@@ -103,6 +107,7 @@ function restartQuiz() {
     for (let i = 0; i < 2; i++) {
         quizBox.children[i].classList.remove('hide');
     }
-    document.getElementById('start-button').classList.add('hide');
+    gameOverText.classList.add('hide');
+    startButton.classList.add('hide');
     startQuiz()
 }

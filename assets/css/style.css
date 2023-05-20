@@ -25,7 +25,7 @@ body {
 }
 /* quiz section, includes the counter, question, answers and 'next' button and */
 #quiz-box {
-    height: 420px;
+    height: 435px;
 
     background-color: #f49f1c;
     margin: 60px 6%;
@@ -41,19 +41,19 @@ body {
 #question {
     font-size: 1.3rem;
     padding: 0 1.5rem;
-    margin: 0;
+    margin: 10px;
 }
 /* counter for which question is displayed */
 #question-counter {
     height: 4.1rem;
     width: 4.1rem;
 
-    font-size: 1.4rem;
+    line-height: 58px;
+    font-size: 1.3rem;
     background-color: #eeb050;
     color: #000000;
     border: #ffffff 0.1px solid;
     border-radius: 50%;
-    line-height: 3.6rem;
     margin: auto;
     margin-top: -2rem;
 }
@@ -106,12 +106,31 @@ body {
 }
 /* start-button */
 #start-button {
-    height: 70px;
-    width: 30%;
+    height: 60px;
+    width: 32%;
     
-    font-size: 2rem;
+    margin-top: 20px;
+    font-size: 1.7rem;
+    color: green;
     border-radius: 30px;
     border: #ffffff 0.1px solid;
     background-color: rgba(240, 255, 255, 0.295);
     line-height: 50px; 
 }
+
+#game-over-text {
+    width: 75%;
+    height: 130px;
+    
+    margin: 60px auto;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: #ffffff 0.1px solid;
+    background-color: rgba(240, 255, 255, 0.295);
+    line-height: 50px;
+}
+
+#game-over-text > strong {
+    font-size: 1.6rem;
+}
+
