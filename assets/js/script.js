@@ -34,32 +34,17 @@ const questions = [
 
     
 ]
-
-document.addEventListener("DOMContentLoaded", function() {
-    for (let i = 0; i < 2; i++) {
-        quizBox.children[i].classList.add('hide');
-    }
+document.addEventListener("DOMContentLoaded", function() { 
     document.getElementById('start-button').classList.remove('hide');
 })
-startQuiz();
-
 //Start quiz function
 function startQuiz() {
     score = 0;
     counter = 0;
-    console.log(counter);
     displayQuestion(counter);
+    
 }
 
-//game over function
-function gameOver() {
-    if (counter == questions.length) {
-        for (let i = 0; i < 2; i++) {
-            quizBox.children[i].classList.add('hide');
-        }
-        document.getElementById('start-button').classList.remove('hide');
-    }
-}
 //Display Question function
 function displayQuestion(counter) {
 
@@ -102,6 +87,16 @@ function nextButtom() {
     nextQuestion.classList.add('hide');
     gameOver();
     displayQuestion(counter);
+}
+
+//game over function
+function gameOver() {
+    if (counter == questions.length) {
+        for (let i = 0; i < 2; i++) {
+            quizBox.children[i].classList.add('hide');
+        }
+        document.getElementById('start-button').classList.remove('hide');
+    }
 }
 
 function restartQuiz() {
