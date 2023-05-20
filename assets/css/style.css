@@ -104,18 +104,14 @@ body {
 .wrong {
     background-color: red;
 }
-
-/* Restart button  */
-
-#restart-button {
-    height: 50px;
-    width: 80%;
+/* start-button */
+#start-button {
+    height: 70px;
+    width: 30%;
     
-    display: inline-block;
-    font-size: 1.2rem;
-    margin: 10px 20px;
-    border-radius: 10px;
+    font-size: 2rem;
+    border-radius: 30px;
     border: #ffffff 0.1px solid;
     background-color: rgba(240, 255, 255, 0.295);
-    line-height: 50px;
+    line-height: 50px; 
 }

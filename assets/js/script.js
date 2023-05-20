@@ -31,17 +31,16 @@ const questions = [
         ]
     }
 
+
+    
 ]
-starbuttun()
-function starbuttun() {
+
+document.addEventListener("DOMContentLoaded", function() {
     for (let i = 0; i < 2; i++) {
         quizBox.children[i].classList.add('hide');
-
     }
-    let startgamePage = document.createElement('div');
-        startgamePage.innerHTML = "<p onclick='restartQuiz()'>Vai toma no seu cu</p>"
-        quizBox.appendChild(startgamePage);
-}
+    document.getElementById('start-button').classList.remove('hide');
+})
 startQuiz();
 
 //Start quiz function
@@ -58,11 +57,7 @@ function gameOver() {
         for (let i = 0; i < 2; i++) {
             quizBox.children[i].classList.add('hide');
         }
-        let endGamePage = document.createElement('div');
-        endGamePage.innerHTML = "<p onclick='restartQuiz()'>Vai toma no seu cu</p>"
-        endGamePage.id= "restart-button"
-        quizBox.appendChild(endGamePage);
-
+        document.getElementById('start-button').classList.remove('hide');
     }
 }
 //Display Question function
@@ -112,8 +107,7 @@ function nextButtom() {
 function restartQuiz() {
     for (let i = 0; i < 2; i++) {
         quizBox.children[i].classList.remove('hide');
-
     }
-    document.querySelector('#restart-button').remove();
+    document.getElementById('start-button').classList.add('hide');
     startQuiz()
 }
