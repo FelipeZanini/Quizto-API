@@ -13,7 +13,7 @@ let score, counter;
 //Question for our quizz
 const questions = [
     {
-        question: 'What is H2O',
+        question: 'A feather and a mug droped at the same time and position, d',
         answers: [
             { text: 'Water', correct: true },
             { text: 'Aluminium', correct: false },
@@ -31,13 +31,51 @@ const questions = [
             { text: 'A Plane', correct: false },
             { text: 'A Homo Sapiens', correct: false },
         ]
+    },
+
+    {
+        question: 'What is jujubinha',
+        answers: [
+
+            { text: 'A Bird', correct: false },
+            { text: 'A Dog', correct: true },
+            { text: 'A Plane', correct: false },
+            { text: 'A Homo Sapiens', correct: false },
+        ]
+    },
+
+
+    {
+        question: 'What is jujubinha',
+        answers: [
+
+            { text: 'A Bird', correct: false },
+            { text: 'A Dog', correct: true },
+            { text: 'A Plane', correct: false },
+            { text: 'A Homo Sapiens', correct: false },
+        ]
+    },
+
+    {
+        question: 'What is jujubinha',
+        answers: [
+
+            { text: 'A Bird', correct: false },
+            { text: 'A Dog', correct: true },
+            { text: 'A Plane', correct: false },
+            { text: 'A Homo Sapiens', correct: false },
+        ]
     }
 
+    
 
     
 ]
 document.addEventListener("DOMContentLoaded", function() { 
-    document.getElementById('start-button').classList.remove('hide');
+    
+    startButton.classList.remove('hide');
+    gameOverText.classList.remove('hide');
+    gameOverText.innerHTML = `<strong>World General Knowledge</strong><br>`;
 })
 //Start quiz function
 function startQuiz() {
@@ -99,6 +137,7 @@ function gameOver() {
         }
         startButton.classList.remove('hide');
         gameOverText.classList.remove('hide');
+        startButton.innerHTML = "Restart";
         gameOverText.innerHTML = `<strong>Congratulation!</strong><br>Your Score is: ${score}`;
     }
 }
