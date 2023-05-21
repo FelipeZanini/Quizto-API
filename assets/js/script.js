@@ -6,6 +6,7 @@ let answers = document.getElementsByClassName('answers');
 let nextQuestion = document.getElementById('next-question');
 let startButton = document.getElementById('start-button');
 let gameOverText = document.getElementById('game-over-text');
+let LogoLandPage = document.getElementById('logo-land-page');
 
 //global variables
 let score, counter;
@@ -13,57 +14,57 @@ let score, counter;
 //Question for our quiz
 const questions = [
     {
-        question: 'A feather and a mug droped at the same time and position, in an airless systen, which one will reach the floor first?',
+        question: 'What was the first animal in space?',
         answers: [
-            { text: 'Mug', correct: true },
-            { text: 'Feather', correct: false },
-            { text: 'Both at the same time', correct: false },
-            { text: 'First the mug and then feather after a slight time ', correct: false },
+            { text: 'Dog', correct: true },
+            { text: 'Bird', correct: false },
+            { text: 'Chimpanzee', correct: false },
+            { text: 'Rat', correct: false },
         ]
     },
 
     {
-        question: 'What is jujubinha',
+        question: 'Where did writing come from?',
         answers: [
 
-            { text: 'A Bird', correct: false },
-            { text: 'A Dog', correct: true },
-            { text: 'A Plane', correct: false },
-            { text: 'A Homo Sapiens', correct: false },
+            { text: 'Ancient Greece', correct: false },
+            { text: 'Roman Empire', correct: false },
+            { text: 'Aztec Empire', correct: false },
+            { text: 'Mesopotamia', correct: true },
         ]
     },
 
     {
-        question: 'What is jujubinha',
+        question: 'What was the largest empires in history?',
         answers: [
 
-            { text: 'A Bird', correct: false },
-            { text: 'A Dog', correct: true },
-            { text: 'A Plane', correct: false },
-            { text: 'A Homo Sapiens', correct: false },
+            { text: 'Mongol Empire', correct: false },
+            { text: 'British Empire', correct: true },
+            { text: 'Russian Empire', correct: false },
+            { text: 'Spanish Empire', correct: false },
         ]
     },
 
 
     {
-        question: 'What is jujubinha',
+        question: 'What is the most common element in universe',
         answers: [
 
-            { text: 'A Bird', correct: false },
-            { text: 'A Dog', correct: true },
-            { text: 'A Plane', correct: false },
-            { text: 'A Homo Sapiens', correct: false },
+            { text: 'Hydrogen', correct: true },
+            { text: 'Carbon', correct: false },
+            { text: 'Helium', correct: false },
+            { text: 'Uranium', correct: false },
         ]
     },
 
     {
-        question: 'What is jujubinha',
+        question: 'What is the smallest bone in human body?',
         answers: [
 
-            { text: 'A Bird', correct: false },
-            { text: 'A Dog', correct: true },
-            { text: 'A Plane', correct: false },
-            { text: 'A Homo Sapiens', correct: false },
+            { text: 'The femur', correct: false },
+            { text: 'The stapes', correct: true },
+            { text: 'The metacarpal', correct: false },
+            { text: 'The trapezoid', correct: false },
         ]
     }
 
@@ -75,7 +76,8 @@ document.addEventListener("DOMContentLoaded", function() {
     
     startButton.classList.remove('hide');
     gameOverText.classList.remove('hide');
-    gameOverText.innerHTML = `<strong>World General Knowledge</strong><br>`;
+    LogoLandPage.classList.remove('hide');
+    gameOverText.innerHTML = `<strong>Test Your Knowledge! <i class="far fa-lightbulb"></i></strong> `;
 })
 //Start quiz function
 function startQuiz() {
@@ -137,6 +139,7 @@ function gameOver() {
         }
         startButton.classList.remove('hide');
         gameOverText.classList.remove('hide');
+        LogoLandPage.classList.remove('hide');
         startButton.innerHTML = "Restart";
         gameOverText.innerHTML = `<strong>Congratulation!</strong><br>Your Score is: ${score}`;
     }
@@ -147,6 +150,7 @@ function restartQuiz() {
         quizBox.children[i].classList.remove('hide');
     }
     gameOverText.classList.add('hide');
-    startButton.classList.add('hide');
+    startButton.classList.add('hide')
+    LogoLandPage.classList.add('hide');;
     startQuiz()
 }

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="QUIZ ABOUT X Y Z"> <!--Add description later-->
-    <meta name="keywords" content="QUIZ, BLA, BLA"> <!--add keywords later-->
+    <meta name="description" content="Take these quizzes to test your knowledge on a variety of fun and interesting topics"> 
+    <meta name="keywords" content="Quiz, General knowledge, History, Science, Fun Facts">
 
     <link href="assets/css/style.css " rel="stylesheet">
     <title>Quiz</title>
@@ -17,7 +17,7 @@
     <header>
         <h1 id="logo" class="center-elements">Quiz <i class="fas fa-brain"></i></h1>
     </header>
-    <!-- main structure, includes question counter, question and answers and next question buttom -->
+    <!-- main structure, including question, answers, current question counter, next question and start button -->
     <main>
         <section id="quiz-box">
             <div class="center-elements hide">
@@ -35,8 +35,9 @@
                 <button type="button" id="next-question" class="hide" onclick="nextButtom()">Next</button>
             </div>
             <div class="center-elements">
+                <h1 id="logo-land-page" class="hide"><i class="fas fa-globe-americas"></i></i></h1>
                 <p id="game-over-text" class="hide"></p>
-                <button type="button" id="start-button" class="hide" onclick="restartQuiz()">Start</button>
+                <button type="button" id="start-button" class="hide" onclick="restartQuiz()" >Start</button>
             </div>
         </section>
     </main>
