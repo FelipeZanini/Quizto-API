@@ -10,15 +10,15 @@ let gameOverText = document.getElementById('game-over-text');
 //global variables
 let score, counter;
 
-//Question for our quizz
+//Question for our quiz
 const questions = [
     {
-        question: 'A feather and a mug droped at the same time and position, d',
+        question: 'A feather and a mug droped at the same time and position, in an airless systen, which one will reach the floor first?',
         answers: [
-            { text: 'Water', correct: true },
-            { text: 'Aluminium', correct: false },
-            { text: 'Oxygen', correct: false },
-            { text: 'Carbon', correct: false },
+            { text: 'Mug', correct: true },
+            { text: 'Feather', correct: false },
+            { text: 'Both at the same time', correct: false },
+            { text: 'First the mug and then feather after a slight time ', correct: false },
         ]
     },
 
