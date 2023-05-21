@@ -47,7 +47,7 @@ const questions = [
 
 
     {
-        question: 'What is the most common element in universe',
+        question: 'What is the most common element in universe?',
         answers: [
 
             { text: 'Hydrogen', correct: true },
