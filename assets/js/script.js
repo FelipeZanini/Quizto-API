@@ -1,17 +1,14 @@
-//get all elements on html document
+// Get all elements on html document
 let quizBox = document.getElementById('quiz-box');
 let questionCounter = document.getElementById('question-counter');
 let question = document.getElementById('question');
 let answers = document.getElementsByClassName('answers');
 let nextQuestion = document.getElementById('next-question');
+let gameOverText = document.getElementById('statics-pages-text');
+let LogoLandPage = document.getElementById('land-page-figure');
 let startButton = document.getElementById('start-button');
-let gameOverText = document.getElementById('game-over-text');
-let LogoLandPage = document.getElementById('logo-land-page');
 
-//global variables
-let score, counter;
-
-//Question for our quiz
+// Questions to be displayed on the quiz 
 const questions = [
     {
         question: 'What was the first animal in space?',
@@ -67,32 +64,36 @@ const questions = [
             { text: 'The trapezoid', correct: false },
         ]
     }
-
-    
-
-    
 ]
-document.addEventListener("DOMContentLoaded", function() { 
-    
+
+// Global variables, such as score and counter
+let score, counter;
+
+// Wait for the DOM to finish loading to display the land page
+document.addEventListener("DOMContentLoaded", function () {
+
     startButton.classList.remove('hide');
     gameOverText.classList.remove('hide');
     LogoLandPage.classList.remove('hide');
     gameOverText.innerHTML = `<strong>Test Your Knowledge! <i class="far fa-lightbulb"></i></strong> `;
 })
-//Start quiz function
+
+/**
+ * The main game "loop", called when the script is first loaded
+ * and after the user's answer has been processed
+ */
 function startQuiz() {
     score = 0;
     counter = 0;
     displayQuestion(counter);
-    
 }
 
 //Display Question function
 function displayQuestion(counter) {
 
-    questionCounter.innerHTML =`${1 + counter}`;
+    questionCounter.innerHTML = `${1 + counter}`;
     question.innerText = questions[counter].question;
-
+    //OTHER FUNCTION TO ADD ATRIBUTE TO THE RIGHT ANSWER, CALLED SetRightAnswer
     for (let i = 0; i < answers.length; i++) {
         answers[i].innerText = questions[counter].answers[i].text;
         if (questions[counter].answers[i].correct) {
@@ -108,8 +109,8 @@ function checkAnswer(answer) {
         score++;
     } else {
         answer.classList.add("wrong");
-        //answer.getAttribute("datatype", "right".click());
     }
+    //remove pointer events function stopUserInteraction
     for (let i = 0; i < answers.length; i++) {
         answers[i].style.pointerEvents = 'none';
         if (answers[i].getAttribute("datatype", "right")) {
@@ -120,7 +121,7 @@ function checkAnswer(answer) {
     counter++;
 }
 
-function nextButtom() {
+function nextPage() {
     for (let i = 0; i < answers.length; i++) {
         answers[i].classList.remove("wrong", "right");
         answers[i].removeAttribute("datatype", "right");

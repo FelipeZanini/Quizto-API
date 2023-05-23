@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Take these quizzes to test your knowledge on a variety of fun and interesting topics"> 
+    <meta name="description"
+        content="Take these quizzes to test your knowledge on a variety of fun and interesting topics">
     <meta name="keywords" content="Quiz, General knowledge, History, Science, Fun Facts">
 
     <link href="assets/css/style.css " rel="stylesheet">
@@ -13,31 +14,35 @@
 </head>
 
 <body>
-    <!-- logo with awesone font -->
+    <!-- logo styled with awesone font -->
     <header>
         <h1 id="logo" class="center-elements">Quiz <i class="fas fa-brain"></i></h1>
     </header>
-    <!-- main structure, including question, answers, current question counter, next question and start button -->
+    <!-- quiz main structure -->
     <main>
+        <!-- question counter and question itself -->
         <section id="quiz-box">
             <div class="center-elements hide">
                 <h2 id="question-counter">2</h2>
                 <h2 id="question">Question Content, this is just a simulation of question content!</h2>
             </div>
 
+            <!-- four possibles answers -->
             <div class="center-elements hide">
                 <buttom class="answers" onclick="checkAnswer(this)">First Answer</buttom>
                 <buttom class="answers" onclick="checkAnswer(this)">Second Answer</buttom>
                 <buttom class="answers" onclick="checkAnswer(this)">Third Answer</buttom>
                 <buttom class="answers" onclick="checkAnswer(this)">Fourth Answer</buttom>
             </div>
+            <!-- next question button -->
             <div class="align-right">
-                <button type="button" id="next-question" class="hide" onclick="nextButtom()">Next</button>
+                <button type="button" id="next-question" class="hide" onclick="nextPage()">Next</button>
             </div>
+            <!-- land page and game over page, with a start/restart button respectively, and a text depending on the page  -->
             <div class="center-elements">
-                <h1 id="logo-land-page" class="hide"><i class="fas fa-globe-americas"></i></i></h1>
-                <p id="game-over-text" class="hide"></p>
-                <button type="button" id="start-button" class="hide" onclick="restartQuiz()" >Start</button>
+                <h1 id="land-page-figure" class="hide"><i class="fas fa-globe-americas"></i></i></h1>
+                <p id="statics-pages-text" class="hide"></p>
+                <button type="button" id="start-button" class="hide" onclick="restartQuiz()">Start</button>
             </div>
         </section>
     </main>

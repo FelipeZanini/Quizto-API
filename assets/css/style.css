@@ -10,26 +10,36 @@ body {
     background-color: #030e4f;
 }
 
+/* rule to hide elements */
+.hide {
+    display: none;
+}
+
+/* rule to center elements */
 .center-elements {
     text-align: center;
 }
 
+/* rule to align elements to the right */
 .align-right {
     text-align: right;
 }
-/* headings and logo style */
+
+/* land page figure of a globe */
+#land-page-figure {
+    margin-top: 25px;
+    font-size: 3rem;
+    color: #030e4f;
+}
+
+/* logo style */
 #logo {
     margin-top: 30px;
     font-size: 3.5rem;
     color: #f49f1c;
 }
-/* Logo displayed at the land page */
-#logo-land-page {
-    margin-top: 25px;
-    font-size: 3rem;
-    color: #030e4f;
-}
-/* quiz section, includes the counter, question, answers and 'next' button and */
+
+/* quiz section box, contains all the main content, such as question, answers, counter and  buttons */
 #quiz-box {
     height: 470px;
 
@@ -40,16 +50,19 @@ body {
     color: #000000;
 }
 
-#quiz-box div {
+/* generic style for all divs in the quiz section box */
+#quiz-box>div {
     padding: 0.3rem 0;
 }
+
 /* question style */
 #question {
     font-size: 1.4rem;
     padding: 0 1.3rem;
     margin-top: 12px;
 }
-/* counter for which question is displayed */
+
+/* question counter, displaying which is the current question */
 #question-counter {
     height: 4.1rem;
     width: 4.1rem;
@@ -63,15 +76,17 @@ body {
     margin: auto;
     margin-top: -2rem;
 }
+
 #question-counter:hover {
     font-size: 1.5rem;
     background-color: #d19438;
 }
-/* answers section */
+
+/* answers style */
 .answers {
     height: 50px;
     width: 80%;
-    
+
     display: inline-block;
     font-size: 1.2rem;
     margin: 10px 20px;
@@ -87,27 +102,24 @@ WHY WHEN I ADD THIS THE HOVER GET PRIORITY OVER CLICK EVENT?
     background-color: rgba(54, 114, 114, 0.295);
 } */
 
-/* button for the next question */
+/* next question button style */
 #next-question {
     height: 2.3rem;
     width: 4.8rem;
-    
+
     font-size: 1.2rem;
     margin: -6px 20px;
     border-radius: 20px;
     color: #030e4f;
     background-color: rgba(240, 255, 255, 0.295);
 }
+
 #next-question:hover {
     background-color: rgba(54, 114, 114, 0.295);
 }
 
-/* hide class */
-.hide {
-    display: none;
-}
 
-/* class right answer  */
+/* class right answer */
 .right {
     background-color: green;
 }
@@ -116,27 +128,29 @@ WHY WHEN I ADD THIS THE HOVER GET PRIORITY OVER CLICK EVENT?
 .wrong {
     background-color: red;
 }
-/* start-button */
+
+/* start button style */
 #start-button {
     height: 53px;
     width: 35%;
-    
+
     font-size: 1.5rem;
     color: rgba(5, 89, 5, 0.896);
     border-radius: 30px;
     border: #ffffff 0.1px solid;
     background-color: rgba(240, 255, 255, 0.295);
-    line-height: 50px; 
+    line-height: 50px;
 }
 
 #start-button:hover {
     background-color: rgba(54, 114, 114, 0.295);
 }
 
-#game-over-text {
+/* land page and game over text style */
+#statics-pages-text {
     width: 85%;
     height: 140px;
-    
+
     margin: 28px auto;
     padding-top: 20px;
     font-size: 1.3rem;
@@ -146,7 +160,6 @@ WHY WHEN I ADD THIS THE HOVER GET PRIORITY OVER CLICK EVENT?
     line-height: 50px;
 }
 
-#game-over-text > strong {
+#statics-pages-text>strong {
     font-size: 1.6rem;
 }
-
