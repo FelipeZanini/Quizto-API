@@ -41,7 +41,7 @@ body {
 
 /* quiz section box, contains all the main content, such as question, answers, counter and  buttons */
 #quiz-box {
-    height: 470px;
+    height: 480px;
 
     background-color: #f49f1c;
     margin: 45px 4%;

@@ -96,6 +96,7 @@ function setUpQuiz() {
 function startQuiz() {
     score = 0;
     counter = 0;
+    randomizeQuestions();
     displayQuestion(counter);
 }
 
@@ -106,7 +107,6 @@ function startQuiz() {
 function displayQuestion(counter) {
 
     // Function to randomize questions
-    randomizeQuestions()
     questionCounter.innerHTML = `${1 + counter}`;
     question.innerText = questions[counter].question;
     for (let i = 0; i < answers.length; i++) {
@@ -118,22 +118,18 @@ function displayQuestion(counter) {
 }
 /**
  * Called to shuffle questions,
- * reorganizing the main arrays of objects
+ * reorganizing the questions
  */
 function randomizeQuestions() {
-    let randomIndex;
-    let randomQuestions = [];
-   
-    for(let i = questions.length; i > randomQuestions.length; i-- ){
-        randomIndex = Math.floor(Math.random() * questions.length);
-        if(questions[randomIndex] != randomQuestions[randomIndex]){
-            randomQuestions.push(questions[randomIndex]);
-            console.log(randomQuestions[randomIndex]);
-            console.log(randomQuestions[randomIndex]);
-        }
+    for (let i = 0 ; i < questions.length -1; i++) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let oldValue = questions[i];
+        
+        questions[i] = questions[j];
+        questions[j] = oldValue;
     } 
-}
 
+}
 /**
  * Get the clicked answer from the user,
  * giving a visual feedback if the user clicked on the right or wrong one,
