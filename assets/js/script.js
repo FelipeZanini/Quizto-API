@@ -71,7 +71,7 @@ let score, counter;
 
 // Wait for the DOM to finish loading to display the land page
 document.addEventListener("DOMContentLoaded", function () {
-    
+
     gameOverText.innerHTML = `<strong>Test Your Knowledge! <i class="far fa-lightbulb"></i></strong> `;
 })
 
@@ -105,6 +105,8 @@ function startQuiz() {
  */
 function displayQuestion(counter) {
 
+    // Function to randomize questions
+    randomizeQuestions()
     questionCounter.innerHTML = `${1 + counter}`;
     question.innerText = questions[counter].question;
     for (let i = 0; i < answers.length; i++) {
@@ -114,6 +116,23 @@ function displayQuestion(counter) {
         }
     }
 }
+/**
+ * Called to shuffle questions,
+ * reorganizing the main arrays of objects
+ */
+function randomizeQuestions() {
+    let randomIndex;
+    let randomQuestions = [];
+   
+    for(let i = questions.length; i > randomQuestions.length; i-- ){
+        randomIndex = Math.floor(Math.random() * questions.length);
+        if(questions[randomIndex] != randomQuestions[randomIndex]){
+            randomQuestions.push(questions[randomIndex]);
+            console.log(randomQuestions[randomIndex]);
+            console.log(randomQuestions[randomIndex]);
+        }
+    } 
+}
 
 /**
  * Get the clicked answer from the user,
@@ -121,7 +140,7 @@ function displayQuestion(counter) {
  * stoping any intereraction with the answers after that 
  */
 function checkAnswer(answer) {
-    
+
     if (answer.getAttribute("datatype", "right")) {
         answer.classList.add("right");
         score++;
@@ -130,7 +149,7 @@ function checkAnswer(answer) {
     }
     // Called to stop any user interaction with the answers, and show the right answers
     stopUserInteraction();
-    
+
     counter++;
     // Show the next question button to the user
     nextQuestion.classList.remove('hide');
@@ -139,7 +158,7 @@ function checkAnswer(answer) {
  * This function is made to show the user the right answer if he/she failed, 
  * then stoping any pointer events (interactions) from the user
  */
-function stopUserInteraction(){
+function stopUserInteraction() {
     for (let i = 0; i < answers.length; i++) {
         answers[i].style.pointerEvents = 'none';
         if (answers[i].getAttribute("datatype", "right")) {
@@ -155,7 +174,7 @@ function stopUserInteraction(){
 function nextPage() {
     // Hide the next question button
     nextQuestion.classList.add('hide');
-    
+
     for (let i = 0; i < answers.length; i++) {
         answers[i].classList.remove("wrong", "right");
         answers[i].removeAttribute("datatype", "right");
