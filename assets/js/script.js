@@ -55,15 +55,72 @@ const questions = [
     },
 
     {
-        question: 'What is the smallest bone in human body?',
+        question: "What was the Disney's first film?",
         answers: [
 
-            { text: 'The femur', correct: false },
-            { text: 'The stapes', correct: true },
-            { text: 'The metacarpal', correct: false },
-            { text: 'The trapezoid', correct: false },
+            { text: 'Snow White, 1937', correct: true },
+            { text: 'Bambi, 1942', correct: false },
+            { text: 'Dumbo, 1943', correct: false },
+            { text: 'Cinderella, 1950', correct: false },
         ]
-    }
+    },
+
+    {
+        question: 'What is the smallest planet in our solar system?',
+        answers: [
+
+            { text: 'Mercury', correct: true },
+            { text: 'Saturn', correct: false },
+            { text: 'Uranus', correct: false },
+            { text: 'Neptune', correct: false },
+        ]
+    },
+
+    {
+        question: 'From what grain is the Japanese spirit Sake made?',
+        answers: [
+
+            { text: 'Barley', correct: false },
+            { text: 'Oats', correct: false },
+            { text: 'Rice', correct: true },
+            { text: 'Corn', correct: false },
+        ]
+    },
+
+    {
+        question: 'How many time zones are there in Russia?',
+        answers: [
+
+            { text: 'Eight', correct: false },
+            { text: 'Ten', correct: false },
+            { text: 'Three', correct: false },
+            { text: 'Eleven', correct: true },
+        ]
+    },
+
+    {
+        question: 'What country has the most islands in the world?',
+        answers: [
+
+            { text: 'Sweden', correct: true },
+            { text: 'Japan', correct: false },
+            { text: 'Finland', correct: false },
+            { text: 'Canada', correct: false },
+        ]
+    },
+
+    {
+        question: 'When was Netflix founded?',
+        answers: [
+
+            { text: '2010', correct: false },
+            { text: '2005', correct: false},
+            { text: '1997', correct: true},
+            { text: '2001', correct: false },
+            
+        
+        ]
+    },
 ]
 
 // Global variables, such as score and counter

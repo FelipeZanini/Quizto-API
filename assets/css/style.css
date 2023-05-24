@@ -163,3 +163,11 @@ WHY WHEN I ADD THIS THE HOVER GET PRIORITY OVER CLICK EVENT?
 #statics-pages-text>strong {
     font-size: 1.6rem;
 }
+
+
+
+@media screen and (min-width:650px) {
+    #quiz-box {
+        height: 800px;
+    }
+}
