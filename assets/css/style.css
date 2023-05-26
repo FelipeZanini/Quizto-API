@@ -96,12 +96,6 @@ body {
     line-height: 50px;
 }
 
-/*
-WHY WHEN I ADD THIS THE HOVER GET PRIORITY OVER CLICK EVENT?
-.answers:hover {
-    background-color: rgba(54, 114, 114, 0.295);
-} */
-
 /* next question button style */
 #next-question {
     height: 2.3rem;

@@ -158,8 +158,8 @@ function startQuiz() {
 }
 
 /**
- * Display question and answers to the user,
- * also set the right answers to the respectively question
+ * Display the questions and answers to the user,
+ * also set the right answer to the respectively question
  */
 function displayQuestion(counter) {
 
