@@ -143,11 +143,11 @@ function setUpQuiz() {
     for (let i = 0; i < 2; i++) {
         quizBox.children[i].classList.remove('hide');
     }
-    
+
     gameOverText.classList.add('hide');
     startButton.classList.add('hide')
     LogoLandPage.classList.add('hide');;
-    
+
     startQuiz()
 }
 
@@ -158,7 +158,7 @@ function setUpQuiz() {
 function startQuiz() {
     score = 0;
     counter = 0;
-    
+
     randomizeQuestions();
     displayQuestion(counter);
 }
@@ -183,7 +183,7 @@ function randomizeQuestions() {
 function displayQuestion(counter) {
     question.innerText = questions[counter].question;
     questionCounter.innerHTML = `${1 + counter}`;
-    
+
     //iterates through each answer, setting the content and 'datatype' to the right one
     for (let i = 0; i < answers.length; i++) {
         answers[i].innerText = questions[counter].answers[i].text;
@@ -242,7 +242,7 @@ function nextPage() {
     }
     // Check if the quiz is over
     gameOver();
-   // proceeding if there are still questions to be displayed
+    // proceeding if there are still questions to be displayed
     displayQuestion(counter);
 }
 
