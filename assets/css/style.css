@@ -161,6 +161,7 @@ body {
 
 /* rules applying until devices with width of 650px */
 @media screen and (max-width:305px){
+    /* land page and game over text style */
     #statics-pages-text {
         width: 95%;
         padding-left: 5px;
@@ -170,7 +171,7 @@ body {
     #statics-pages-text>strong {
         font-size: 1.1rem;
     }
-
+    /* quiz section box style */
     #quiz-box {
         height: 450px;
     }
@@ -215,6 +216,7 @@ body {
 
 /* rules applying beyond devices with width of 650px  */
 @media screen and (min-width:650px) {
+    /* land page and game over text style */
     #land-page-figure{
         font-size: 4rem;
     }
@@ -264,24 +266,24 @@ body {
 }
 /* rules applying beyond devices with width of 1100px  */
 @media screen and (min-width:1100px) {
-
+    /* land page and game over text style */
     #statics-pages-text{
         width: 74%;
         height: 214px;
         margin: 24px auto;
         padding-top: 70px;
     }
-   
+   /* quiz box style */
     #quiz-box {
         height: 560px;
         margin: 30px 10%;
     }
-
+    /* question box style */
     #question {
         margin-top: 36px;
         margin-bottom: 17px;
     }
-
+    /* answers box style */
     .answers {
         margin: 11px 20px
     }
