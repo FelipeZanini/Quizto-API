@@ -4,11 +4,12 @@ let questionCounter = document.getElementById('question-counter');
 let question = document.getElementById('question');
 let answers = document.getElementsByClassName('answers');
 let nextQuestion = document.getElementById('next-question');
+let startButton = document.getElementById('start-button');
 let gameOverText = document.getElementById('statics-pages-text');
 let LogoLandPage = document.getElementById('land-page-figure');
-let startButton = document.getElementById('start-button');
 
-// Questions to be displayed on the quiz 
+
+// Questions collections of the quiz 
 const questions = [
     {
         question: 'What was the first animal in space?',
@@ -114,16 +115,18 @@ const questions = [
         answers: [
 
             { text: '2010', correct: false },
-            { text: '2005', correct: false},
-            { text: '1997', correct: true},
+            { text: '2005', correct: false },
+            { text: '1997', correct: true },
             { text: '2001', correct: false },
-            
-        
+
+
         ]
-    },
+    }
 ]
 
-// Global variables, such as score and counter
+/*  Global variables, such as score and counter.
+The counter is used to iterate through the questions array, 
+and also display the current question to the user */
 let score, counter;
 
 // Wait for the DOM to finish loading to display the land page
@@ -134,15 +137,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /**
  * Is called when the user fires the start or restart button,
- * hiding the land page or game over page to the user,
- * calling the 'startquiz' to properly start the quiz */
+ * hiding the land or game over page to the user,
+ * calling the 'startQuiz' function to start the quiz */
 function setUpQuiz() {
     for (let i = 0; i < 2; i++) {
         quizBox.children[i].classList.remove('hide');
     }
+    
     gameOverText.classList.add('hide');
     startButton.classList.add('hide')
     LogoLandPage.classList.add('hide');;
+    
     startQuiz()
 }
 
@@ -153,8 +158,22 @@ function setUpQuiz() {
 function startQuiz() {
     score = 0;
     counter = 0;
+    
     randomizeQuestions();
     displayQuestion(counter);
+}
+
+/**
+ * Called to shuffle questions,
+ */
+function randomizeQuestions() {
+    for (let i = 0; i < questions.length - 1; i++) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let oldValue = questions[i];
+
+        questions[i] = questions[j];
+        questions[j] = oldValue;
+    }
 }
 
 /**
@@ -162,10 +181,9 @@ function startQuiz() {
  * also set the right answer to the respectively question
  */
 function displayQuestion(counter) {
-
-    // Function to randomize questions
-    questionCounter.innerHTML = `${1 + counter}`;
     question.innerText = questions[counter].question;
+    questionCounter.innerHTML = `${1 + counter}`;
+    
     for (let i = 0; i < answers.length; i++) {
         answers[i].innerText = questions[counter].answers[i].text;
         if (questions[counter].answers[i].correct) {
@@ -174,23 +192,9 @@ function displayQuestion(counter) {
     }
 }
 /**
- * Called to shuffle questions,
- * reorganizing the questions
- */
-function randomizeQuestions() {
-    for (let i = 0 ; i < questions.length -1; i++) {
-        let j = Math.floor(Math.random() * (i + 1));
-        let oldValue = questions[i];
-        
-        questions[i] = questions[j];
-        questions[j] = oldValue;
-    } 
-
-}
-/**
  * Get the clicked answer from the user,
  * giving a visual feedback if the user clicked on the right or wrong one,
- * stoping any intereraction with the answers after that 
+ * stopping any user interaction with the answers after being called
  */
 function checkAnswer(answer) {
 
@@ -208,8 +212,9 @@ function checkAnswer(answer) {
     nextQuestion.classList.remove('hide');
 }
 /**
- * This function is made to show the user the right answer if he/she failed, 
- * then stoping any pointer events (interactions) from the user
+ * This function is made to stop any pointer events (interactions) from the user
+ * showing to the user the right answer if he/she failed,
+ * in other words, it sets the attempts to one
  */
 function stopUserInteraction() {
     for (let i = 0; i < answers.length; i++) {
@@ -222,7 +227,8 @@ function stopUserInteraction() {
 /**
  * This function is called when the user fires the next button, 
  * setting the answers to default, removing class and data type,
- * calling the gameOver function to check if the quiz is finished, if not it calls the displayQuestion
+ * calling the gameOver function to check if the quiz is finished, 
+ * if not it calls the displayQuestion to proceed
  */
 function nextPage() {
     // Hide the next question button
@@ -239,7 +245,7 @@ function nextPage() {
 
 /**
  * Is called every time the user wants to proceed to next question,
- * if the game is over, is displayed the game over page,
+ * checking if the game is over, to display the game over page,
  * showing the score and the restart button to the user
  */
 function gameOver() {
@@ -247,11 +253,12 @@ function gameOver() {
         for (let i = 0; i < 2; i++) {
             quizBox.children[i].classList.add('hide');
         }
+        startButton.innerHTML = "Restart";
+        gameOverText.innerHTML = `<strong>Congratulation!</strong><br>Your Score is: ${score}`;
+
         startButton.classList.remove('hide');
         gameOverText.classList.remove('hide');
         LogoLandPage.classList.remove('hide');
-        startButton.innerHTML = "Restart";
-        gameOverText.innerHTML = `<strong>Congratulation!</strong><br>Your Score is: ${score}`;
     }
 }
 
