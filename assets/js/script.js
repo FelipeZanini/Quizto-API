@@ -184,6 +184,7 @@ function displayQuestion(counter) {
     question.innerText = questions[counter].question;
     questionCounter.innerHTML = `${1 + counter}`;
     
+    //iterates through each answer, setting the content and 'datatype' to the right one
     for (let i = 0; i < answers.length; i++) {
         answers[i].innerText = questions[counter].answers[i].text;
         if (questions[counter].answers[i].correct) {
@@ -233,13 +234,15 @@ function stopUserInteraction() {
 function nextPage() {
     // Hide the next question button
     nextQuestion.classList.add('hide');
-
+    // Set the answers to default
     for (let i = 0; i < answers.length; i++) {
         answers[i].classList.remove("wrong", "right");
         answers[i].removeAttribute("datatype", "right");
         answers[i].style.pointerEvents = 'auto';
     }
+    // Check if the quiz is over
     gameOver();
+   // proceeding if there are still questions to be displayed
     displayQuestion(counter);
 }
 
@@ -249,13 +252,16 @@ function nextPage() {
  * showing the score and the restart button to the user
  */
 function gameOver() {
+    // Hide the main quiz content
     if (counter == questions.length) {
         for (let i = 0; i < 2; i++) {
             quizBox.children[i].classList.add('hide');
         }
+        // Add content to the game over page and button
         startButton.innerHTML = "Restart";
         gameOverText.innerHTML = `<strong>Congratulation!</strong><br>Your Score is: ${score}`;
 
+        // Display the game over page content
         startButton.classList.remove('hide');
         gameOverText.classList.remove('hide');
         LogoLandPage.classList.remove('hide');
