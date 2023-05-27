@@ -3,7 +3,7 @@
 Quiz is a site built for restless minds who always want to discover more fun facts about human knowledge, going through diverse topics such as science, history, geography and pop culture. 
 The Quiz is intended to have fun questions but is also challenging, being composed of ten questions and four possible answers, presenting a feedback with the user score at the end of the quiz. Quiz is a fully responsive JavaScript website, easily navigated and user-friendly.
 
-![Responsice Mockup](../Share/assets/images/mockup.jpg)
+![Responsice Mockup](/workspace/Quiz/assets/images/ResponsiceMockup.png)
 
 ## Features
 
