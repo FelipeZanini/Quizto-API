@@ -27,24 +27,24 @@ body {
 
 /* land page figure of a globe */
 #land-page-figure {
-    margin-top: 25px;
+    margin-top: 0px;
     font-size: 3rem;
     color: #030e4f;
 }
 
 /* logo style */
 #logo {
-    margin-top: 30px;
+    margin-top: 0px;
     font-size: 3.5rem;
     color: #f49f1c;
 }
 
 /* quiz section box, contains all the main content, such as question, answers, counter and  buttons */
 #quiz-box {
-    height: 480px;
+    height: 400px;
 
     background-color: #f49f1c;
-    margin: 45px 4%;
+    margin: 24px 4%;
     border: #ffffff 1.2px solid;
     border-radius: 2rem;
     color: #000000;
