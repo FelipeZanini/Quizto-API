@@ -1,39 +1,57 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# __Quiz__
 
-Welcome,
+Quiz is a site built for restless minds who always want to discover more fun facts about human knowledge, going through diverse topics such as science, history, geography and pop culture. 
+The Quiz is intended to have fun questions but is also challenging, being composed of ten questions and four possible answers, presenting a feedback with the user score at the end of the quiz. Quiz is a fully responsive JavaScript website, easily navigated and user-friendly.
 
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![Responsice Mockup](../Share/assets/images/mockup.jpg)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **May 11th, 2023**
+## Features
 
-## Codeanywhere Reminders
+### Existing Features
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+- __ The Land Page __
+  - The Land Page is made such as the logo to catch the user's eyes and persuade them with a instigate phrase.
+![Map Section](../Share/assets/images/map-section.jpg)
 
-`python3 -m http.server`
+- __The Quiz logo and Heading__
+  -It is displayed on the top of the page and was designed to catch the user's eyes and made a remarkable brand name.
+![Navigation Bar](../Share/assets/images/nav-bar.jpg)
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+- __The Quiz question and its corresponding position __
+  - The question section is where the user will be able to see the question, that is picked randomly among the questions list.
+  - and also see the progress through the quiz.
+![Join Us Section](../Share/assets/images/Join%20Us.jpg)
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+- __The Answers Area __
+  - The user will be able to see all four possible answers, being responsive on click, and changing the colour according to the accuracy of the answer.
+  - The user has just one attempt to guess the right one, if the user answers wrong, the right one will be showed, then the interactions with the answers will no longer exist.
+![Reason Section](../Share/assets/images/Reason%20section.jpg)
 
-`http_server`
+- __ The Game Over Page __
+  -  The game over page congrats the user to finish the quiz and show them how many questions were answered right.
+  - The user is able to restart the quiz, just clicking on the Restart Button.
+![Meetup Section](../Share/assets/images/meetup-section.jpg)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Features Left to Implement
+- Would be a good idea to implement a note with a straightforward explanation about the answer.  
+- The Quiz also could have in the game over page a clickable list with all questions, so the user could check their answers.
+- Would be great to have a timer implemented to the quiz, making the quiz more dynamic.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+## Testing
+-   I conducted many tests from a diverse range of width devices, and the site is very responsive, working perfectly fine with different devices such as tablets, smartphones and computers, a problem that I  faced was displaying the land and the game over page, however, the best way I found was to hide the quiz main elements such as questions, counter, answers, and show only the static pages, and after the user clicks on the start or restart button,  the static page is hidden, it is also worth mentioning the function that locks attempts at one and shows the right question for the user, finally let's talk about the next button that is hidden and shown depending on whether the user answered the question or not.
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Validator Testing
+- No errors were returned when passing through the official [W3C](https://validator.w3.org/) validator.
+- No errors were found when passing through the official [Jigsaw](https://jigsaw.w3.org/css-validator/) validator
 
-To log into the Heroku toolbelt CLI:
+# Deployment
+> The site was deployed to GitHub pages. The steps are:
+> In the GitHub repository, navigate to the Settings tab
+> From the source section drop-down menu, select the Master Branch
+> Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- The live link can be found here: [My Site](https://felipezanini.github.io/Share/](https://felipezanini.github.io/Quiz/)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
+## Credits:
+- __Content__ 
+    -The icons in the footer were taken from Font Awesome
