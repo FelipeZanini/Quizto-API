@@ -50,7 +50,7 @@ The Quiz is intended to have fun questions but is also challenging, being compos
 > From the source section drop-down menu, select the Master Branch
 > Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
-- The live link can be found here: [My Site]([https://felipezanini.github.io/Share/](https://felipezanini.github.io/Quiz/](https://felipezanini.github.io/Quiz/))
+- The live link can be found here: [My Site](https://felipezanini.github.io/Quiz/)
 
 ## Credits:
 - __Content__ 
