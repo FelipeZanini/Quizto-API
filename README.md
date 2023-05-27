@@ -11,7 +11,7 @@ The Quiz is intended to have fun questions but is also challenging, being compos
 
 - __ The Land Page __
   - The Land Page is made such as the logo to catch the user's eyes and persuade them with a instigate phrase.
-![Map Section](../Share/assets/images/map-section.jpg)
+![Map Section](/workspace/Quiz/assets/images/ResponsiceMockup.png)
 
 - __The Quiz logo and Heading__
   -It is displayed on the top of the page and was designed to catch the user's eyes and made a remarkable brand name.
