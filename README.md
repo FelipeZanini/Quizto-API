@@ -10,19 +10,19 @@ The quiz is intended to have fun questions but is also challenging, being compos
 
 ### Existing Features
 
--  __The Land Page__
+- __The Quizto Land Page__
  
   - The Land Page is made such as the logo to catch the user's eyes and persuade them with a instigate phrase.
 
 ![Land Page](/assets/images/landPage.png)
 
-- __The Quiz logo and Heading__
+- __The Quizto logo and Heading__
   
   - It is displayed on the top of the page and was designed to catch the user's eyes and made a remarkable brand name.
 
 ![Quiz Logo and Heading](/assets/images/LogoHeading.png)
 
-- __The Quiz question and its corresponding position__
+- __The Question and Current Question Counter__
   
   - The question section is where the user will be able to see the question, that is picked randomly among the questions list.
   - Additionally, the user can also see the progress through the quiz.
