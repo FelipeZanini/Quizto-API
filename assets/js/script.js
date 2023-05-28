@@ -122,7 +122,7 @@ const questions = [
 
         ]
     }
-]
+];
 
 /*  Global variables, such as score and counter.
 The counter is used to iterate through the questions array, 
@@ -133,7 +133,7 @@ let score, counter;
 document.addEventListener("DOMContentLoaded", function () {
 
     gameOverText.innerHTML = `<strong>Test Your Knowledge! <i class="far fa-lightbulb"></i></strong> `;
-})
+});
 
 /**
  * Is called when the user fires the start or restart button,
@@ -145,10 +145,10 @@ function setUpQuiz() {
     }
 
     gameOverText.classList.add('hide');
-    startButton.classList.add('hide')
-    LogoLandPage.classList.add('hide');;
+    startButton.classList.add('hide');
+    LogoLandPage.classList.add('hide');
 
-    startQuiz()
+    startQuiz();
 }
 
 /**

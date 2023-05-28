@@ -60,10 +60,10 @@ The quiz is intended to have fun questions but is also challenging, being compos
 - JavaScript
     - No errors were found when passing through the official [Jshint validator](https://jshint.com/)
       - The following metrics were returned: 
-      - There are 11 functions in this file.
-      - Function with the largest signature takes 2 arguments, while the median is 0.
-      - Largest function has 10 statements in it, while the median is 3.
-      - The most complex function has a cyclomatic complexity value of 4 while the median is 2.
+      - There are 9 functions in this file
+      - Function with the largest signature take 1 arguments, while the median is 0.
+      - Largest function has 8 statements in it, while the median is 6.
+      - The most complex function has a cyclomatic complexity value of 3 while the median is 2.
 
 
 # Deployment
