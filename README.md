@@ -9,28 +9,28 @@ The Quiz is intended to have fun questions but is also challenging, being compos
 
 ### Existing Features
 
-- __ The Land Page __
+-  __ The Land Page __
   - The Land Page is made such as the logo to catch the user's eyes and persuade them with a instigate phrase.
-![Map Section](/workspace/Quiz/assets/images/ResponsiceMockup.png)
+![Land Page](/assets/images/landPage.png)
 
 - __The Quiz logo and Heading__
   -It is displayed on the top of the page and was designed to catch the user's eyes and made a remarkable brand name.
-![Navigation Bar](../Share/assets/images/nav-bar.jpg)
+![Quiz Logo and Heading](/assets/images/LogoHeading.png)
 
 - __The Quiz question and its corresponding position __
   - The question section is where the user will be able to see the question, that is picked randomly among the questions list.
   - and also see the progress through the quiz.
-![Join Us Section](../Share/assets/images/Join%20Us.jpg)
+![Question and Counter](/assets/images/QuestionAndCounter.png)
 
 - __The Answers Area __
   - The user will be able to see all four possible answers, being responsive on click, and changing the colour according to the accuracy of the answer.
   - The user has just one attempt to guess the right one, if the user answers wrong, the right one will be showed, then the interactions with the answers will no longer exist.
-![Reason Section](../Share/assets/images/Reason%20section.jpg)
+![Answers Area](/assets/images/answersBox.png)
 
 - __ The Game Over Page __
   -  The game over page congrats the user to finish the quiz and show them how many questions were answered right.
   - The user is able to restart the quiz, just clicking on the Restart Button.
-![Meetup Section](../Share/assets/images/meetup-section.jpg)
+![Game Over Page](/assets/images/GameOverPage.png)
 
 ### Features Left to Implement
 - Would be a good idea to implement a note with a straightforward explanation about the answer.  
