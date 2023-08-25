@@ -8,21 +8,6 @@ let startButton = document.getElementById('start-button');
 let gameOverText = document.getElementById('statics-pages-text');
 let LogoLandPage = document.getElementById('land-page-figure');
 
-async function quizQuestions(counter) {
-    const response = await fetch("https://the-trivia-api.com/api/questions");
-    const data = await response.json();
-
-    //After The Fisher-Yates algorith
-    const array = [0, 1, 2, 3];
-    const shuffledArray = array.sort((a, b) => 0.5 - Math.random());
-
-    question.innerText = data[counter].question;
-    answers[shuffledArray[0]].innerText = data[counter].correctAnswer;
-    answers[shuffledArray[1]].innerText = data[counter].incorrectAnswers[0];
-    answers[shuffledArray[2]].innerText = data[counter].incorrectAnswers[1];
-    answers[shuffledArray[3]].innerText = data[counter].incorrectAnswers[2];
-};
-
 /*  Global variables, such as score and counter.
 The counter is used to iterate through the questions array, 
 and also display the current question to the user */
@@ -62,22 +47,33 @@ function startQuiz() {
 };
 
 /**
+ * Function to get random question from a API
+ */
+async function quizQuestions(counter) {
+    const response = await fetch("https://the-trivia-api.com/api/questions");
+    const data = await response.json();
+
+    //Later try to implement Fisher-Yates algorith
+    const array = [0, 1, 2, 3];
+    const shuffledArray = array.sort((a, b) => 0.5 - Math.random());
+
+    question.innerText = data[counter].question;
+    answers[shuffledArray[0]].innerText = data[counter].correctAnswer;
+    answers[shuffledArray[1]].innerText = data[counter].incorrectAnswers[0];
+    answers[shuffledArray[2]].innerText = data[counter].incorrectAnswers[1];
+    answers[shuffledArray[3]].innerText = data[counter].incorrectAnswers[2];
+
+    // Setting the right attribute to the answer
+    answers[shuffledArray[0]].setAttribute("datatype", "right");
+};
+
+/**
  * Display the questions and answers to the user,
  * also set the right answer to the respectively question
  */
 function displayQuestion(counter) {
+    questionCounter.innerHTML = `${1 + counter}`;
     quizQuestions(counter);
-
-
-
-    // question.innerText = data[counter].question;
-    // questionCounter.innerHTML = `${1 + counter}`;
-    // for (let i = 0; i < answers.length; i++) {
-    //     answers[i].innerText = data[counter].answers[i].text;
-    //     if (data[counter].answers[i].correct) {
-    //         answers[i].setAttribute("datatype", "right");
-    //     }
-    // }
 }
 /**
  * Get the clicked answer from the user,
@@ -140,7 +136,7 @@ function nextPage() {
  */
 function gameOver() {
     // Hide the main quiz content
-    if (counter == questions.length) {
+    if (counter == 10) {
         for (let i = 0; i < 2; i++) {
             quizBox.children[i].classList.add('hide');
         }
