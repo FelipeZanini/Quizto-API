@@ -92,6 +92,7 @@ body {
     margin: 7px 20px;
     border-radius: 10px;
     border: #ffffff 0.1px solid;
+    color: black;
     background-color: rgba(240, 255, 255, 0.295);
     line-height: 50px;
 }
@@ -161,18 +162,18 @@ body {
 /* responsive web design rules (media queries) */
 
 /* rules applying until device-width of 305px */
-@media screen and (max-width:305px) {
+@media screen and (max-width:400px) {
 
     /* land and game over page style for devices of 305px width */
     #statics-pages-text {
         width: 95%;
-        padding-left: 5px;
-        padding-right: 5px;
-        font-size: 1.1rem;
+        padding-left: 3px;
+        padding-right: 3px;
+        font-size: 1rem;
     }
 
     #statics-pages-text>strong {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
     }
 
     /* quiz box style for devices of 305px width */
@@ -181,17 +182,17 @@ body {
     }
 
     /* question counter style for devices of 305px width */
-    #qustion-counter {
+    #question-counter {
         height: 4rem;
         width: 4rem;
 
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         line-height: 61px;
     }
 
     /* question style for devices of 305px width */
     #question {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         padding: 0 10px;
         margin-top: 10px;
 
@@ -228,7 +229,7 @@ body {
 
     /* land and game over page style for devices of 650px width */
     #land-page-figure {
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
 
     #statics-pages-text {
@@ -260,8 +261,8 @@ body {
 
     /* question style for devices of 650px width */
     #question {
-        font-size: 1.5rem;
-        padding: 0 4rem;
+        font-size: 1.2rem;
+        padding: 0 2rem;
         margin-top: 27px;
 
     }
