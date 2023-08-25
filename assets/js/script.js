@@ -8,121 +8,20 @@ let startButton = document.getElementById('start-button');
 let gameOverText = document.getElementById('statics-pages-text');
 let LogoLandPage = document.getElementById('land-page-figure');
 
+async function quizQuestions(counter) {
+    const response = await fetch("https://the-trivia-api.com/api/questions");
+    const data = await response.json();
 
-// Questions collections of the quiz 
-const questions = [
-    {
-        question: 'What was the first animal in space?',
-        answers: [
-            { text: 'Dog', correct: true },
-            { text: 'Bird', correct: false },
-            { text: 'Chimpanzee', correct: false },
-            { text: 'Rat', correct: false },
-        ]
-    },
+    //After The Fisher-Yates algorith
+    const array = [0, 1, 2, 3];
+    const shuffledArray = array.sort((a, b) => 0.5 - Math.random());
 
-    {
-        question: 'Where did writing come from?',
-        answers: [
-
-            { text: 'Ancient Greece', correct: false },
-            { text: 'Roman Empire', correct: false },
-            { text: 'Aztec Empire', correct: false },
-            { text: 'Mesopotamia', correct: true },
-        ]
-    },
-
-    {
-        question: 'What was the largest empires in history?',
-        answers: [
-
-            { text: 'Mongol Empire', correct: false },
-            { text: 'British Empire', correct: true },
-            { text: 'Russian Empire', correct: false },
-            { text: 'Spanish Empire', correct: false },
-        ]
-    },
-
-
-    {
-        question: 'What is the most common element in universe?',
-        answers: [
-
-            { text: 'Hydrogen', correct: true },
-            { text: 'Carbon', correct: false },
-            { text: 'Helium', correct: false },
-            { text: 'Uranium', correct: false },
-        ]
-    },
-
-    {
-        question: "What was the Disney's first film?",
-        answers: [
-
-            { text: 'Snow White, 1937', correct: true },
-            { text: 'Bambi, 1942', correct: false },
-            { text: 'Dumbo, 1943', correct: false },
-            { text: 'Cinderella, 1950', correct: false },
-        ]
-    },
-
-    {
-        question: 'What is the smallest planet in our solar system?',
-        answers: [
-
-            { text: 'Mercury', correct: true },
-            { text: 'Saturn', correct: false },
-            { text: 'Uranus', correct: false },
-            { text: 'Neptune', correct: false },
-        ]
-    },
-
-    {
-        question: 'From what grain is the Japanese spirit Sake made?',
-        answers: [
-
-            { text: 'Barley', correct: false },
-            { text: 'Oats', correct: false },
-            { text: 'Rice', correct: true },
-            { text: 'Corn', correct: false },
-        ]
-    },
-
-    {
-        question: 'How many time zones are there in Russia?',
-        answers: [
-
-            { text: 'Eight', correct: false },
-            { text: 'Ten', correct: false },
-            { text: 'Three', correct: false },
-            { text: 'Eleven', correct: true },
-        ]
-    },
-
-    {
-        question: 'What country has the most islands in the world?',
-        answers: [
-
-            { text: 'Sweden', correct: true },
-            { text: 'Japan', correct: false },
-            { text: 'Finland', correct: false },
-            { text: 'Canada', correct: false },
-        ]
-    },
-
-    {
-        question: 'When was Netflix founded?',
-        answers: [
-
-            { text: '2010', correct: false },
-            { text: '2005', correct: false },
-            { text: '1997', correct: true },
-            { text: '2001', correct: false },
-
-
-        ]
-    }
-];
+    question.innerText = data[counter].question;
+    answers[shuffledArray[0]].innerText = data[counter].correctAnswer;
+    answers[shuffledArray[1]].innerText = data[counter].incorrectAnswers[0];
+    answers[shuffledArray[2]].innerText = data[counter].incorrectAnswers[1];
+    answers[shuffledArray[3]].innerText = data[counter].incorrectAnswers[2];
+};
 
 /*  Global variables, such as score and counter.
 The counter is used to iterate through the questions array, 
@@ -149,7 +48,7 @@ function setUpQuiz() {
     LogoLandPage.classList.add('hide');
 
     startQuiz();
-}
+};
 
 /**
  * The quiz start function,
@@ -159,38 +58,26 @@ function startQuiz() {
     score = 0;
     counter = 0;
 
-    randomizeQuestions();
     displayQuestion(counter);
-}
-
-/**
- * Called to shuffle questions,
- */
-function randomizeQuestions() {
-    for (let i = 0; i < questions.length - 1; i++) {
-        let j = Math.floor(Math.random() * (i + 1));
-        let oldValue = questions[i];
-
-        questions[i] = questions[j];
-        questions[j] = oldValue;
-    }
-}
+};
 
 /**
  * Display the questions and answers to the user,
  * also set the right answer to the respectively question
  */
 function displayQuestion(counter) {
-    question.innerText = questions[counter].question;
-    questionCounter.innerHTML = `${1 + counter}`;
+    quizQuestions(counter);
 
-    //iterates through each answer, setting the content and 'datatype' to the right one
-    for (let i = 0; i < answers.length; i++) {
-        answers[i].innerText = questions[counter].answers[i].text;
-        if (questions[counter].answers[i].correct) {
-            answers[i].setAttribute("datatype", "right");
-        }
-    }
+
+
+    // question.innerText = data[counter].question;
+    // questionCounter.innerHTML = `${1 + counter}`;
+    // for (let i = 0; i < answers.length; i++) {
+    //     answers[i].innerText = data[counter].answers[i].text;
+    //     if (data[counter].answers[i].correct) {
+    //         answers[i].setAttribute("datatype", "right");
+    //     }
+    // }
 }
 /**
  * Get the clicked answer from the user,
