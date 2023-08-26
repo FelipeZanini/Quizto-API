@@ -63,6 +63,17 @@ async function quizQuestions(counter) {
     answers[shuffledArray[2]].innerText = data[counter].incorrectAnswers[1];
     answers[shuffledArray[3]].innerText = data[counter].incorrectAnswers[2];
 
+    // Block of code to compact the answers if the text inside the div is bigger than the container
+    for(let answer of answers){
+        if(answer.innerText.length > 35){
+            answer.style.lineHeight = "20px";
+            answer.style.height = "50px";
+        };
+        if(answer.innerText.length > 50){
+            answer.style.height = "65px";
+        };
+    };
+    
     // Setting the right attribute to the answer
     answers[shuffledArray[0]].setAttribute("datatype", "right");
 };
@@ -121,6 +132,8 @@ function nextPage() {
     for (let i = 0; i < answers.length; i++) {
         answers[i].classList.remove("wrong", "right");
         answers[i].removeAttribute("datatype", "right");
+        answers[i].style.height = null;
+        answers[i].style.lineHeight = null;
         answers[i].style.pointerEvents = 'auto';
     }
     // Check if the quiz is over
